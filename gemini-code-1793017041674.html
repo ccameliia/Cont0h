@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulasi HP Interactive AU</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Mockup HP -->
+  <div class="phone-container">
+    <div class="dynamic-island"></div>
+    
+    <!-- Screen Content -->
+    <div class="screen">
+      <!-- 1. Lock Screen -->
+      <div id="lock-screen" class="page active">
+        <div class="time" id="clock">12:00</div>
+        <p class="date">Kamis, 18 Juni</p>
+        <button class="unlock-btn" onclick="switchPage('home-screen')">Usap/Klik untuk Buka</button>
+      </div>
+
+      <!-- 2. Home Screen -->
+      <div id="home-screen" class="page">
+        <div class="app-grid">
+          <div class="app-icon" onclick="switchPage('chat-app')">
+            <div class="icon chat-icon">💬</div>
+            <span>Chat</span>
+          </div>
+          <div class="app-icon" onclick="switchPage('notes-app')">
+            <div class="icon notes-icon">📝</div>
+            <span>Notes</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Chat App -->
+      <div id="chat-app" class="page">
+        <div class="app-header">
+          <button onclick="switchPage('home-screen')">◀ Home</button>
+          <h3>Pesan (Jai)</h3>
+        </div>
+        <div class="chat-body" id="chat-body">
+          <div class="msg received">Kamu besok latihan jam berapa?</div>
+        </div>
+        <div class="chat-choices">
+          <button onclick="sendChat('Jam 13:00 di studio.', 'Pilih jam 13:00')">Balas: "Jam 13:00"</button>
+          <button onclick="sendChat('Gak bisa ikut, sibuk.', 'Pilih menolak')">Balas: "Gak bisa ikut"</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
